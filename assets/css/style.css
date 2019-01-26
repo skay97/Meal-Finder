@@ -1,0 +1,28 @@
+.jumbotron-fluid {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+#ingredients-holder {
+    text-align: center;
+    margin: 15px;
+}
+
+.card-header {
+    background-color: black;
+    color: white;
+}
+
+#button-holder {
+    margin: 15px;
+}
+
+#add-button {
+    margin: 10px;
+}
+
+
+#form-submit {
+    float: left;
+}
