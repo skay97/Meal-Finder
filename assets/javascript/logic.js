@@ -1,27 +1,34 @@
-var ingredients = [];
+var ingredients = ["brocolli", "carrots", "apples"];
+
 
 function makeButton() {
-    $(buttons id).empty();
+    $("#button-holder").empty();
 
-    for (i=0; i < ingredients.length; i++) {
+    for (var i=0; i < ingredients.length; i++) {
         var createButton = $(`<button>${ingredients[i]}</button>`);
-        createButton.attr("id", "addIngredient");
+        createButton.addClass("addIngredient")
         createButton.attr("data-name", ingredients[i]);
         createButton.attr("isAdded", false);
+        $("#button-holder").append(createButton);
     }
 }
 
-$(".food").click(function() {
+makeButton();
+
+$(".addIngredient").click(function() {
     //check box
-    console.log($(this).text());
-    console.log($(this).buttonState);
-    if (this.buttonState = false) {
-        $("#ingredientList").append(this.text);
-        this.buttonState = true;
-    } else {
-        $("#ingredientList").remove(this.text);
-        this.buttonState = false
-    }
+    var ingredientName = $(this).text();
+    var dataName = $(this).attr("data-name");
+    var added = $(this).attr("isAdded")
+    if (added==="false") {
+        $("#list").append(`<ul id = ${dataName}><input class="form-check-input" type="checkbox" >${ingredientName}</input></ul>`);
+        $(this).attr("isAdded", true);
+
+    } else if (added==="true") {
+        $(this).attr("isAdded", false);
+        $(`#${dataName}`).remove();  
+    } 
     //append an li to ul
     
 });
+

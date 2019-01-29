@@ -12,42 +12,42 @@
 <body>
     <div class="container">
 
-        <div class="jumbotron jumbotron-fluid">
-            <h1 id="header">Find a Meal</h1>
-            <h5 id="header">search for recipes with food you have</h5>
+        <div class="jumbotron">
+            <div class="card" id="title-holder">
+                <h1><strong>Find a Meal</strong></h1>
+                <h5>search for recipes with food you have</h5>
+            </div>
         </div>
 
-        <div class="card" id="ingredients-holder">
-            <div class="card-header">Choose ingredients:</div>
-            <div class="card-body">
 
-                <div class="container" id="first-div">
-                    <div class="container" id="button-holder">
-                        <div class="food"><button type="submit" class="btn btn-success" buttonState="false">food</button></div>
-                        <button type="submit" class="btn btn-success">food</button>
-                        <button type="submit" class="btn btn-success">food</button>
-                        <button type="submit" class="btn btn-success">food</button>
-                        <button type="submit" class="btn btn-success">food</button>
-                        <button type="submit" class="btn btn-success">food</button>
-                        <button type="submit" class="btn btn-success">food</button>
-                        <button type="submit" class="btn btn-success">food</button>
-                        <button type="submit" class="btn btn-success">food</button>
-                        <button type="submit" class="btn btn-success">food</button>
-                        <div><input type="checkbox">Food</div>
+        <div class="row">
+
+            <div class="col">
+                <div class="card" id="ingredients-holder">
+                    <div class="card-header">Choose ingredients:</div>
+
+                    <div class="container" id="first-div">
+                        <div class="container" id="button-holder">
+                            <!-- <button type="submit" class="btn btn-success"></button>
+                            <button type="submit" class="btn btn-success"></button>
+                            <button type="submit" class="btn btn-success"></button>
+                            <button type="submit" class="btn btn-success">food</button>
+                            <button type="submit" class="btn btn-success">food</button>
+                            <button type="submit" class="btn btn-success">food</button>
+                            <button type="submit" class="btn btn-success">food</button>
+                            <button type="submit" class="btn btn-success">food</button>
+                            <button type="submit" class="btn btn-success">food</button>
+                            <button type="submit" class="btn btn-success">food</button> -->
+                        </div>
                     </div>
 
-                    <!-- <div class="container">
-                        <label for="name-input">More food?</label>
-                        <input type="text" id="name-input">
-                    </div>
-
-                    <div class="container" id="add-button">
-                        <button type="submit" class="btn btn-dark">Add</button>
-                    </div> -->
                 </div>
+            </div>
 
 
-                <div class="container" id="form-submit">
+
+            <div class="col">
+                <div class="container" id="add-holder">
 
                     <div class="container">
                         <label for="name-input">More food?</label>
@@ -59,16 +59,22 @@
                     </div>
 
                 </div>
+            </div>
 
+
+
+            <div class="col">
+                <div class="card" id="list-holder">
+                    <div class="card-header">Your List:</div>
+                    <div class="container" id="list">
+                    </div>
+                    <div class="container" id="list-button-holder">
+                        <button class="btn btn-light">Remove</button>
+                        <button class="btn btn-light">Search</button>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-
-
-
-
-
 
     </div>
     <script
