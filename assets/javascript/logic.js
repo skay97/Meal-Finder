@@ -5,7 +5,7 @@ function makeButton() {
     $("#button-holder").empty();
 
     for (var i=0; i < ingredients.length; i++) {
-        var createButton = $(`<button>${ingredients[i]}</button>`);
+        var createButton = $(`<button class='btn btn-success'>${ingredients[i]}</button>`);
         createButton.addClass("addIngredient")
         createButton.attr("data-name", ingredients[i]);
         createButton.attr("isAdded", false);
@@ -26,8 +26,8 @@ $(".addIngredient").click(function() {
 
     } else if (added==="true") {
         $(this).attr("isAdded", false);
-        $(`#${dataName}`).remove();  
-    } 
+        $(`#${dataName}`).remove();
+    }
     //append an li to ul
     
 });
