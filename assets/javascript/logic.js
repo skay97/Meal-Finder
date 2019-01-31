@@ -28,7 +28,36 @@ $(".addIngredient").click(function() {
         $(this).attr("isAdded", false);
         $(`#${dataName}`).remove();  
     } 
-    //append an li to ul
     
 });
+
+$("#search").on("click", function(){
+
+    var queryUrl= "https://www.food2fork.com/api/search?key=ff19b0555b6cda447e11ade9c8664bf8&q=chicken%20breast&page=2"
+
+    $.ajax({
+        url : queryUrl,
+        method: "get"
+    }).then(function(response){
+        
+        var results = JSON.parse(response)
+        console.log(typeof results)
+
+        var recipes = results.recipes
+
+        for (var i = 0; i<5; i++){
+
+            var recipeDiv = $("<div class=recipeDiv>");
+            var showRecipe = $("<img>");
+            showRecipe.attr("src",recipes[i].image_url);
+            showRecipe.addClass("recipe");
+            $(recipeDiv).append(showRecipe)
+            $(".recipesContainer").append(recipeDiv)
+        }
+
+    })
+
+})
+
+
 
