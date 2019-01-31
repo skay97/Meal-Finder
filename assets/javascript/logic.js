@@ -60,11 +60,12 @@ $(".addIngredient").click(function() {
     //check box
     var ingredientName = $(this).text();
     var dataName = $(this).attr("data-name");
+    dataName = dataName.replace(/ +/g, "")
     var added = $(this).attr("isAdded")
     if (added==="false") {
         $("#list").append(`<li id = ${dataName}><input class="form-check-input" type="checkbox" id="isChecked">${ingredientName}</input></li>`);
         $(this).attr("isAdded", true);
-        yourList.push(dataName);
+        yourList.push(ingredientName);
     } else if (added==="true") {
         $(this).attr("isAdded", false);
 
