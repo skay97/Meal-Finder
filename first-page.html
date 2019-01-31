@@ -23,11 +23,18 @@
         <div class="row">
 
             <div class="col">
+                    
                 <div class="card" id="ingredients-holder">
                     <div class="card-header">Choose ingredients:</div>
 
                     <div class="container" id="first-div">
                         <div class="container" id="button-holder">
+
+
+
+                                <div id="recipes-go-here"></div>
+
+
                         </div>
                     </div>
 
@@ -45,7 +52,7 @@
                     </div>
 
                     <div class="container" id="add-button">
-                        <button type="submit" class="btn btn-dark">Add</button>
+                        <button type="submit" class="btn btn-dark" id="add">Add</button>
                     </div>
 
                 </div>
@@ -56,11 +63,14 @@
             <div class="col">
                 <div class="card" id="list-holder">
                     <div class="card-header">Your List:</div>
-                    <div class="container" id="list">
+                    <div class="container">
+                        <ul id="list"></ul>
                     </div>
                     <div class="container" id="list-button-holder">
-                        <button class="btn btn-light">Remove</button>
-                        <button class="btn btn-light" id ="search">Search</button>
+
+                        <button class="btn btn-light" type="submit" id="remove-button">Remove</button>
+                        <button class="btn btn-light">Search</button>
+
                     </div>
                 </div>
             </div>
@@ -80,7 +90,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 
-    <script src="assets/javascript/logic.js"></script>
+
+<!-- Javascript -->
+<script type="text/javascript" src="assets/javascript/logic.js"></script>
+
+
 </body>
 
 </html>
