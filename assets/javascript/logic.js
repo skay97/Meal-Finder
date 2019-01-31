@@ -65,7 +65,7 @@ $(".addIngredient").click(function() {
     if (added==="false") {
         $("#list").append(`<li id = ${dataName}><input class="form-check-input" type="checkbox" id="isChecked">${ingredientName}</input></li>`);
         $(this).attr("isAdded", true);
-        yourList.push(dataName);
+        yourList.push(ingredientName);
     } else if (added==="true") {
         $(this).attr("isAdded", false);
 
