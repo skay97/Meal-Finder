@@ -1,11 +1,52 @@
+
 var ingredients = ["Pasta", "Couscous", "Rice", "All-purpose flour", "White sugar", "Brown sugar", "Powdered sugar", "Baking powder", "Baking powder", "Active dry yeast", "Chicken stock", "Beef stock", "Milk", "Butter", "Heavy Cream", "Eggs", "Parmesan", "Bacon", "Parsley", "Celery", "Carrots", "Lemons", "Limes", "Orange jiuce", "Ketchup", "Mayonnaise", "Olive oil", "Vegetable oil", "Canola oil", "Vinegar", "Mustard", "Honey", "Garlic", "Shallots", "Potatoes", "Red onions", "Yellow onions", "Tomatoes", "Diced tomatoes", "Tomato sauce", "Tomato paste", "Crushed tomatoes"];
 var yourList = [];
+
+var foodItems = "";
+
+$(document).on("click", ".btn-success", function () {
+    
+    var recipe = $(this).text();
+    var queryURL = "https://www.food2fork.com/api/get?key=024036f3c7d4150404b73b0146508369&rId=35382"
+        
+   
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+        .then(function (response) {
+            var results = response.data;
+
+            for (var i = 0; i < ingredients.length; i++) {
+                var apiDiv = $("<div>");
+
+                var imageURL = results[i].image_url;
+                var title = results[i].title;
+                var socialRank = results[i].social_rank;
+
+                var recipeImage = $("<img>");
+
+                recipeImage.attr("src", "socialRank");
+                recipeImage.attr("src", "ingredients");
+                recipeImage.attr("text", "title");
+
+
+                // Get the api to populate to the top
+                apiDiv.prepend(recipeImage);
+
+
+                $("#recipes-go-here").prepend(apiDiv);
+
+            }
+
+        });
+});
 
 function makeButton() {
     $("#button-holder").empty();
 
     for (var i=0; i < ingredients.length; i++) {
-        var createButton = $(`<button>${ingredients[i]}</button>`);
+        var createButton = $(`<button class='btn btn-success'>${ingredients[i]}</button>`);
         createButton.addClass("addIngredient")
         createButton.attr("data-name", ingredients[i]);
         createButton.attr("isAdded", false);
@@ -26,9 +67,11 @@ $(".addIngredient").click(function() {
         yourList.push(dataName);
     } else if (added==="true") {
         $(this).attr("isAdded", false);
+
         $(`#${dataName}`).remove();  
         yourList.splice(dataName);
     } 
+
     //append an li to ul
     
 });
