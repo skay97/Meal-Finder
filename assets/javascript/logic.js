@@ -125,3 +125,7 @@ $.each(ingredientList, (element, value) => {
 });
  
 })
+
+$("#remove-all").on("click", function() {
+    $("#list").empty();
+})
