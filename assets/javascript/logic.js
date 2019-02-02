@@ -141,6 +141,18 @@ $("#add-button").click(function() {
 //This allows ingredients to be removed from the list if they are checked
 $("#remove-button").click(function() {
     var ingredientList = $(".form-check-input");
+
+$.each(ingredientList, (element, value) => {
+    if (value.checked == true) {
+        $(value).parent().remove();
+    }
+});
+ 
+})
+
+$("#remove-all").on("click", function() {
+    $("#list").empty();
+})
     var ingredientID = ingredientList.parent().attr("id");
     $.each(ingredientList, (element, value) => {
         var targetLi = $(value).parent()[0]
