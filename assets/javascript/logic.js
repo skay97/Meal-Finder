@@ -1,49 +1,9 @@
-
 var ingredients = ["Pasta", "Couscous", "Rice", "All-purpose flour", "White sugar", "Brown sugar", "Powdered sugar", "Baking powder", "Active dry yeast", "Chicken stock", "Beef stock", "Milk", "Butter", "Heavy Cream", "Eggs", "Parmesan", "Bacon", "Parsley", "Celery", "Carrots", "Lemons", "Limes", "Orange juice", "Ketchup", "Mayonnaise", "Olive oil", "Vegetable oil", "Canola oil", "Vinegar", "Mustard", "Honey", "Garlic", "Shallots", "Potatoes", "Red onions", "Yellow onions", "Tomatoes", "Diced tomatoes", "Tomato sauce", "Tomato paste", "Crushed tomatoes"];
 
 //List to be pushed to API
 var yourList = [];
 
 var foodItems = "";
-
-// $(document).on("click", ".btn-success", function () {
-    
-//     var recipe = $(this).text();
-//     var queryURL = "https://www.food2fork.com/api/get?key=024036f3c7d4150404b73b0146508369&rId=35382"
-        
-   
-//         $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//     })
-//         .then(function (response) {
-//             var results = response.data;
-
-//             for (var i = 0; i < ingredients.length; i++) {
-//                 var apiDiv = $("<div>");
-
-//                 var imageURL = results[i].image_url;
-//                 var title = results[i].title;
-//                 var socialRank = results[i].social_rank;
-
-//                 var recipeImage = $("<img>");
-
-//                 recipeImage.attr("src", "socialRank");
-//                 recipeImage.attr("src", "ingredients");
-//                 recipeImage.attr("text", "title");
-
-
-//                 // Get the api to populate to the top
-//                 apiDiv.prepend(recipeImage);
-
-
-//                 $("#recipes-go-here").prepend(apiDiv);
-
-//             }
-
-//         });
-// });
-
 
 //function that generates ingredients buttons to page
 function makeButton() {
@@ -121,7 +81,11 @@ $(".addIngredient").click(function() {
 
 $(".search").on("click", function(){
 
-    var queryUrl= "https://www.food2fork.com/api/search?key=ff19b0555b6cda447e11ade9c8664bf8&q=chicken%20breast&page=2"
+    var selectedItems = yourList.join();
+
+    selectedItems = selectedItems.replace(/ +/g, "%20")
+
+    var queryUrl= "https://www.food2fork.com/api/search?key=dde951870b4dbfb943f7bb40f23b9a18&q="+selectedItems+"&page=2"
 
     $.ajax({
         url : queryUrl,
