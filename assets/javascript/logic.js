@@ -101,11 +101,9 @@ $(".search").on("click", function(){
 
             var recipeCard = $("<div class=recipeCard>");
             var recipeTitle = $("<h3>"+recipes[i].title+"<h3>")
-            var showRecipe = $("<img>");
             var rank = $("<p>"+"Social Rank:"+recipes[i].social_rank+"<p>")
-            showRecipe.attr("src",recipes[i].image_url);
             $(recipeCard).append(recipeTitle)
-            $(recipeCard).append(showRecipe)
+            $(recipeCard).append(`<a href=${recipes[i].source_url} target = "_blank"><img src=${recipes[i].image_url}></a> `)
             $(recipeCard).append(rank)
             $(".recipesContainer").append(recipeCard)
         }
