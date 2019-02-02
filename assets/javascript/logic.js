@@ -138,6 +138,7 @@ $("#add-button").click(function() {
 
 $("#remove-all").on("click", function() {
     $("#list").empty();
+    yourList = [];
 })
 
 //This allows ingredients to be removed from the list if they are checked
