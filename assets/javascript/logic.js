@@ -1,36 +1,36 @@
 // List of food ingredients
-var ingredients = ["Butter", "Milk", "Eggs", "Flour", "Tomato", "Rice", "Apple", "Rice", "Pasta", "Chicken", "Fish"];
+var ingredients = ["Butter", "Milk", "Eggs", "Flour", "Tomato", "Apple", "Rice", "Pasta", "Chicken", "Fish"];
 
 var foodItems = "";
 
-$(document).on("click", ".btn-success", function () {
+$(document).on("click", ".addIngredient", function () {
     
     var recipe = $(this).text();
-    var queryURL = "https://www.food2fork.com/api/get?key=024036f3c7d4150404b73b0146508369&rId=35382"
+    // var queryURL = "https://www.food2fork.com/api/search?key=024036f3c7d4150404b73b0146508369&rId=35382&q=chicken%20breast&page=2"
         
    
         $.ajax({
         url: queryURL,
         method: "GET"
-    })
-        .then(function (response) {
-            var results = response.data;
+    }).done(function (res) {
+            var results = JSON.parse(res);
+            console.log(results.count);
+            console.log(results)
+            var recipes = results.recipes;
 
-            for (var i = 0; i < ingredients.length; i++) {
+            for (var i = 0; i < recipes.length; i++) {
                 var apiDiv = $("<div>");
 
-                var imageURL = results[i].image_url;
-                var title = results[i].title;
-                var socialRank = results[i].social_rank;
+                var imageURL = recipes[i].image_url;
+                console.log(imageURL);
+                var title = recipes[i].title;
+                
 
                 var recipeImage = $("<img>");
 
-                recipeImage.attr("src", "socialRank");
-                recipeImage.attr("src", "ingredients");
-                recipeImage.attr("text", "title");
+                recipeImage.attr("src", imageURL);
 
-
-                // Get the api to populate to the top
+                // Get the api to populate to the bottom
                 apiDiv.prepend(recipeImage);
 
 
@@ -40,7 +40,8 @@ $(document).on("click", ".btn-success", function () {
 
         });
 });
-var ingredients = ["brocolli", "carrots", "apples"];
+
+// var ingredients = ["brocolli", "carrots", "apples"];
 
 
 function makeButton() {
@@ -74,3 +75,19 @@ $(".addIngredient").click(function() {
     
 });
 
+// Button click sound
+$(document).ready(function() {
+    
+    var audio  = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/click.mp3');
+    var audio2 = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/clickUp.mp3')
+  
+    $("button").mousedown(function() {
+      audio2.load();
+      audio2.play();
+    });
+      
+    $("button").mouseup(function() {
+      audio.load();
+      audio.play();
+    });
+  });
