@@ -1,4 +1,4 @@
-var ingredients = ["Pasta", "Couscous", "Rice", "All-purpose flour", "White sugar", "Brown sugar", "Powdered sugar", "Baking powder", "Active dry yeast", "Chicken stock", "Beef stock", "Milk", "Butter", "Heavy Cream", "Eggs", "Parmesan", "Bacon", "Parsley", "Celery", "Carrots", "Lemons", "Limes", "Orange juice", "Ketchup", "Mayonnaise", "Olive oil", "Vegetable oil", "Canola oil", "Vinegar", "Mustard", "Honey", "Garlic", "Shallots", "Potatoes", "Red onions", "Yellow onions", "Tomatoes", "Diced tomatoes", "Tomato sauce", "Tomato paste", "Crushed tomatoes"];
+var ingredients = ["Pasta", "Couscous", "Rice", "White sugar", "Brown sugar", "Powdered sugar", "Baking powder", "Active dry yeast", "Chicken stock", "Beef stock", "Milk", "Butter", "Heavy Cream", "Eggs", "Parmesan", "Bacon", "Parsley", "Celery", "Carrots", "Lemons", "Limes", "Orange juice", "Ketchup", "Mayonnaise", "Olive oil", "Vegetable oil", "Canola oil", "Vinegar", "Mustard", "Honey", "Garlic", "Shallots", "Potatoes", "Red onions", "Yellow onions", "Tomatoes", "Diced tomatoes", "Tomato sauce", "Tomato paste", "Crushed tomatoes"];
 
 //List to be pushed to API
 var yourList = [];
@@ -101,11 +101,9 @@ $(".search").on("click", function(){
 
             var recipeCard = $("<div class=recipeCard>");
             var recipeTitle = $("<h3>"+recipes[i].title+"<h3>")
-            var showRecipe = $("<img>");
             var rank = $("<p>"+"Social Rank:"+recipes[i].social_rank+"<p>")
-            showRecipe.attr("src",recipes[i].image_url);
             $(recipeCard).append(recipeTitle)
-            $(recipeCard).append(showRecipe)
+            $(recipeCard).append(`<a href=${recipes[i].source_url} target = "_blank"><img src=${recipes[i].image_url}></a> `)
             $(recipeCard).append(rank)
             $(".recipesContainer").append(recipeCard)
         }
