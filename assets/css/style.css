@@ -68,6 +68,10 @@ ul {
     margin: 10px;
 }
 
+.btn-test {
+    padding: 15px;
+}
+
 .btn-light {
     margin: 15px;
 }
@@ -90,4 +94,14 @@ body {
 
 .row {
     /* background-image: url(images/metallic.jpg); */
+}
+.recipeCard{
+    background-color: white;
+    border: 1px solid;
+    border-radius: 20px;
+    max-width: 388px;
+}
+img{
+    max-width: 400px;
+    max-height: 200px;
 }

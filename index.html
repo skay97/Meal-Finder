@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Find a Meal</title>
+
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -14,33 +16,37 @@
     <div class="container">
 
         <div class="jumbotron">
-            <div class="card1" id="title-holder">
+          
+            <div class="card" id="title-holder">
                 <h1><strong>Find a Meal</strong></h1>
                 <h5>search for recipes with food you have</h5>
             </div>
-                <p>“People who love to eat are always the best people. - Julia Child”</p>
-
+          <p>“People who love to eat are always the best people. - Julia Child”</p>
         </div>
 
 
-        <div class="container">
-            <div class="row">
+        <div class="row">
 
-                <div class="col-md-12">
-                        
-                    <div class="card" id="ingredients-holder">
-                        <div class="card-header">Choose Ingredients:</div>
+            <div class="col-md-12">
 
-                        <div class="container" id="first-div">
-                            <div class="container" id="button-holder">
+                <div class="card" id="ingredients-holder">
+                    <div class="card-header">Choose ingredients:</div>
 
-                       
-                            </div>
+                    <div class="container" id="first-div">
+                        <div class="container" id="button-holder">
+
+
+
+
+                            <div id="recipes-go-here"></div>
+
+
                         </div>
-
                     </div>
+
                 </div>
-        </div>
+            </div>
+
 
 
             <div class="col">
@@ -76,44 +82,50 @@
             </div>
         </div>
 
-        <!-- <div class="recipesContainer">
 
-        </div> -->
-        <div class="recipesContainer">
-            <div class="recipeCard">
-                <h3>Chicken and cashew nut stir-fry</h3>
-                <img src="http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg" alt="Chicken and cashew nut stir-fry">
-            </div>
+        <!-- <div class="recipesContainer"-->
+
+
+    </div>
+
+    </div> -->
+    <div class="recipesContainer">
+        <div class="recipeCard">
+            <h3>Chicken and cashew nut stir-fry</h3>
+            <img src="http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg" alt="Chicken and cashew nut stir-fry">
         </div>
+    </div>
 
-        <!-- YOUTUBE SEARCH FORM -->
-        <form>
-            <input id="query" value='cats' type="text" />
-            <button onclick="load()">Search</button>
-            <pre id="response"></pre>
-        </form>
-        <div id="put-videos-here">
+    <!-- YOUTUBE SEARCH FORM -->
+    <form>
+        <input id="query" value='cats' type="text" />
+        <button onclick="load()">Search</button>
+        <pre id="response"></pre>
+    </form>
+    <div id="put-videos-here">
 
-        </div>
+    </div>
+
 
 
 
 
     </div>
+
+
+    <!-- Javascript & JQuery -->
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-        <script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  crossorigin="anonymous"></script>
-
-
-    <!-- Javascript -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/javascript/logic.js"></script>
     <script src="assets/javascript/yt.js" type="text/javascript"></script>
     <script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript"></script>
 
 
+
 </body>
+
+
 
 </html>
