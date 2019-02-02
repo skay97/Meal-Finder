@@ -1,5 +1,5 @@
 
-var ingredients = ["Pasta", "Couscous", "Rice", "All-purpose flour", "White sugar", "Brown sugar", "Powdered sugar", "Baking powder", "Baking powder", "Active dry yeast", "Chicken stock", "Beef stock", "Milk", "Butter", "Heavy Cream", "Eggs", "Parmesan", "Bacon", "Parsley", "Celery", "Carrots", "Lemons", "Limes", "Orange juice", "Ketchup", "Mayonnaise", "Olive oil", "Vegetable oil", "Canola oil", "Vinegar", "Mustard", "Honey", "Garlic", "Shallots", "Potatoes", "Red onions", "Yellow onions", "Tomatoes", "Diced tomatoes", "Tomato sauce", "Tomato paste", "Crushed tomatoes"];
+var ingredients = ["Pasta", "Couscous", "Rice", "All-purpose flour", "White sugar", "Brown sugar", "Powdered sugar", "Baking powder", "Active dry yeast", "Chicken stock", "Beef stock", "Milk", "Butter", "Heavy Cream", "Eggs", "Parmesan", "Bacon", "Parsley", "Celery", "Carrots", "Lemons", "Limes", "Orange juice", "Ketchup", "Mayonnaise", "Olive oil", "Vegetable oil", "Canola oil", "Vinegar", "Mustard", "Honey", "Garlic", "Shallots", "Potatoes", "Red onions", "Yellow onions", "Tomatoes", "Diced tomatoes", "Tomato sauce", "Tomato paste", "Crushed tomatoes"];
 var yourList = [];
 
 var foodItems = "";
@@ -56,12 +56,18 @@ function makeButton() {
 
 makeButton();
 
+$(".btn-success").hover(function () {
+    $(this).addClass("btn-test", 250, "easeOutQuad")
+} )
+$(".btn-success").mouseout(function () {
+    $(this).removeClass("btn-test", 250, "easeInQuad")
+})
+
 $(".addIngredient").click(function() {
     //check box
     var ingredientName = $(this).text();
     var dataName = $(this).attr("data-name");
     dataName = dataName.replace(/ +/g, "")
-    console.log(dataName)
     var added = $(this).attr("isAdded")
     if (added==="false") {
         $("#list").append(`<li id = ${dataName}><input class="form-check-input" type="checkbox" id="isChecked">${ingredientName}</input></li>`);
@@ -72,8 +78,9 @@ $(".addIngredient").click(function() {
 
         $(`#${dataName}`).remove();
         function isMatch(value) {
-            return value !== dataName;
+            return value !== ingredientName;
         }
+
         yourList = yourList.filter(isMatch);
         console.log(yourList);
     } 
