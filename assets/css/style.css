@@ -69,7 +69,7 @@ ul {
 }
 
 .btn-test {
-    padding: 15px .75rem;
+    padding: 10px .75rem;
 }
 
 .btn-light {
@@ -96,18 +96,35 @@ body {
     /* background-image: url(images/metallic.jpg); */
 }
 .recipeCard{
-    background-color: white;
-    border: 1px solid;
+    background-color: bisque;
+    border: 0px 1px 1px 1px solid;
     border-radius: 20px;
-    max-width: 388px;
+    max-width: 380px;
+    margin: 10px;
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.recipeCard:hover{
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.25, 1.25);
+    transform: scale(1.05, 1.05);
+    cursor: pointer;
 }
 img{
-    max-width: 400px;
+    width: 380px;
     max-height: 200px;
+    background-color: bisque;
+    border-radius: 10px
 }
 
 h3 {
     text-align: center;
+    color: #696969;
+    background-color: navajowhite;
+    font-size: 25px;
+    font-family: garamond;
+    font-weight: bolder;
 }
 
 li {
