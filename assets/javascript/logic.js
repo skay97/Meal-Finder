@@ -101,10 +101,8 @@ $(".search").on("click", function(){
 
             var recipeCard = $("<div class=recipeCard>");
             var recipeTitle = $("<h3>"+recipes[i].title+"<h3>")
-            var rank = $("<p>"+"Social Rank:"+recipes[i].social_rank+"<p>")
             $(recipeCard).append(recipeTitle)
             $(recipeCard).append(`<a href=${recipes[i].source_url} target = "_blank"><img src=${recipes[i].image_url}></a> `)
-            $(recipeCard).append(rank)
             $(".recipesContainer").append(recipeCard)
         }
 
