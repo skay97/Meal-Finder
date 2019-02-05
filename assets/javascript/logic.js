@@ -116,7 +116,8 @@ $(".search").on("click", function(){
 
     
 //This allows ingredients to be put in Your List manually via input field
-$("#add-button").click(function() {
+$("#add-button").click(function(e) {
+    e.preventDefault();
 
     //Stores the value of the input field into nameInput
     var nameInput = $("#name-input").val();
